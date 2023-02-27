@@ -11,146 +11,64 @@ The keyboard event plays a pivotal role in te kayboard interaction. The most int
 
 When user holds a key for a sustained period of time, the analogical chain of events is executed. In this case `keydown`, `beforeinput`, `keypress` (if applicable), `input` are repeat at an environment-dependent rate. Only when a key released `keyup` event appears. Most importantly, any default actions associated with that held key are completed before the keyup event is dispatched. For example, holding a key "a" for some period of time would provide sequence of "aaa..." in the text box. However, "keyup" event would not be executed until all the "a" characters are finised processing.
 
-The diagram illustrates the difference between pressing a key and holding a key on a keyboard.
+The diagrams illustrate the difference between pressing a key and holding a key on a keyboard.
+Pressing a key           |  Holding a key
+:-------------------------:|:-------------------------:
+[![](https://mermaid.ink/img/pako:eNqNUktPwzAM_iuRj6ib1sfWJQcOaBeEgAM31mnKWo9VtGmVpoUy7b-Tvra2Q8Apjr-HHTtH8JMAgUGmuMJVyN8kjyeF5QlPiGSLQsmSMPKUkCb0xIEXuH3HMkg-hEYe2qgFdrhPJIYizRUjd5dLC7fAfXX0vFKJWVZ71dEFyNOmhD5HbAwahLS3qmFCyPpmQyaTW9L1XifPD6mQUf86ImHWuZAqW2sGtL5jo_G58DEiP1PHk9AS_8Al9xVKUvAoRyLRx7DQBX9x6LSr50eSp4HeT5_e9x9KBoo_BJfhr7tQb5rvIgw2g9Ya6F-Frkvk6XnQEiPk2fjher9XLfUte1uveHrLYECMMuZhoD_vsWJ6oA4YowdMhwHueR4pDzxx0lSeq-SlFD4wJXM0oOm5_e7A9jzKdDbl4jVJ4o6kr8CO8AmMWlOXzhyTzuaWQ92laUAJzFpMHUpN23Udas-WlnUy4KvWz6bUpu7CmlPLNucL116evgFfXSsx?type=png)](https://mermaid.live/edit#pako:eNqNUktPwzAM_iuRj6ib1sfWJQcOaBeEgAM31mnKWo9VtGmVpoUy7b-Tvra2Q8Apjr-HHTtH8JMAgUGmuMJVyN8kjyeF5QlPiGSLQsmSMPKUkCb0xIEXuH3HMkg-hEYe2qgFdrhPJIYizRUjd5dLC7fAfXX0vFKJWVZ71dEFyNOmhD5HbAwahLS3qmFCyPpmQyaTW9L1XifPD6mQUf86ImHWuZAqW2sGtL5jo_G58DEiP1PHk9AS_8Al9xVKUvAoRyLRx7DQBX9x6LSr50eSp4HeT5_e9x9KBoo_BJfhr7tQb5rvIgw2g9Ya6F-Frkvk6XnQEiPk2fjher9XLfUte1uveHrLYECMMuZhoD_vsWJ6oA4YowdMhwHueR4pDzxx0lSeq-SlFD4wJXM0oOm5_e7A9jzKdDbl4jVJ4o6kr8CO8AmMWlOXzhyTzuaWQ92laUAJzFpMHUpN23Udas-WlnUy4KvWz6bUpu7CmlPLNucL116evgFfXSsx)  |  [![](https://mermaid.ink/img/pako:eNqFU01v2zAM_SuEjkMSWF7zYQHroegORbHtsNvioGBspjEqS4Yse8uC_PfRX42Tot3JFN_jI59EH0ViUxJKlB493Wf47DCf1mFsYmPsExnvDqDgu4U2jM0ea3p6oUNqfxsGHvuoB7a0s44yU1Rewd35MOA98jDOsVjhqCxbsTY6A1XR9eDvFZvSDoHh1EwMAOtPG5hOb2EYvk2-OmmQKwdrFtladOnXmjkzRwWhhy_gXUUbYB5kJexJp9AbZb0LiXE31uN0giYh_Q71-p64JNmjw8STgxp1ReAooaxuPb2rMNTe__gGVZHy443pY_3LkouK_xScX2Y9hLwGuNWUbi5G66APGo1Ge9ujMfYRXhU8AGoNKe2w0h6Gy2iuPKOSV8Am7RK8vpcjTViODXbL9MbaFWVYpobHmyQmIieXY5byH3JsmLHwe8opForDfp5YxObEVKy8_XkwiVDN7kxE573_p4TaoS45W6D5ZW0-kPgo1FH8EUreBLNlFEXL8EZKGchwIg5CTeV8Fq0WgZThMlqEjJwm4m8rEMyixXwpw2D1memL-So8_QNS8U92?type=png)](https://mermaid.live/edit#pako:eNqFU01v2zAM_SuEjkMSWF7zYQHroegORbHtsNvioGBspjEqS4Yse8uC_PfRX42Tot3JFN_jI59EH0ViUxJKlB493Wf47DCf1mFsYmPsExnvDqDgu4U2jM0ea3p6oUNqfxsGHvuoB7a0s44yU1Rewd35MOA98jDOsVjhqCxbsTY6A1XR9eDvFZvSDoHh1EwMAOtPG5hOb2EYvk2-OmmQKwdrFtladOnXmjkzRwWhhy_gXUUbYB5kJexJp9AbZb0LiXE31uN0giYh_Q71-p64JNmjw8STgxp1ReAooaxuPb2rMNTe__gGVZHy443pY_3LkouK_xScX2Y9hLwGuNWUbi5G66APGo1Ge9ujMfYRXhU8AGoNKe2w0h6Gy2iuPKOSV8Am7RK8vpcjTViODXbL9MbaFWVYpobHmyQmIieXY5byH3JsmLHwe8opForDfp5YxObEVKy8_XkwiVDN7kxE573_p4TaoS45W6D5ZW0-kPgo1FH8EUreBLNlFEXL8EZKGchwIg5CTeV8Fq0WgZThMlqEjJwm4m8rEMyixXwpw2D1memL-So8_QNS8U92)
+
+
 
 
 The nature of key press mechanism brings a fundamental theory of the keyboard interaction - the pair of "keyup" and "keydown" events. This pair of events is essential in any keyboard interaction. Hence, the keyboard interaction appears if and only if the pair appears within set of key events.
 
-## Diagram of Keyboard Interaction
+## Diagram of a Keyboard Interaction
+[![](https://mermaid.ink/img/pako:eNqlk11PgzAUhv_KSZMlarY5oHwm6o0ajdEbL0wEQjroRiO0C5QpLvvvlm3sw2G82F3f9zycvqctCxSLhCIPlZJIesvItCD5YK4HPOBcRJTLogYPXgSsl74WBjwlcxp90DpKxCdX1QelQemV3HD6PlfNFPVGmGR82oBK-4YCGJe0ILFkgkcTxlmZ0sSDx50LrQs-DptMAOBfhDAYXEMbb2VuszaV3_naaL4ZruDD-n6vNRwTHtMMfOsv_HCwzUD2mu51R-kg92v_hugdp-g6ve0mDdlcLVxtx28t3-ne_4R-cAnPpB7T-6wq0ydajwUpkjs1DKMlnMUZ4JFxDr57Ex7f1qljdH7fNFYPBfVRToucsEQ98UWDB0imNKcB8tQyoRNSZTJAAV8qlFRSvNY8Rp4sKtpH1SzZ_RTIm5CsVO6M8Hch8hZSEnkL9IU8zcVDzcAjzTWx5di63ke1cnVzaNuWrmzLHuk2dpZ99L1qoA01C7vYNCzDdR2sGcsfAVg0oQ?type=png)](https://mermaid.live/edit#pako:eNqlk11PgzAUhv_KSZMlarY5oHwm6o0ajdEbL0wEQjroRiO0C5QpLvvvlm3sw2G82F3f9zycvqctCxSLhCIPlZJIesvItCD5YK4HPOBcRJTLogYPXgSsl74WBjwlcxp90DpKxCdX1QelQemV3HD6PlfNFPVGmGR82oBK-4YCGJe0ILFkgkcTxlmZ0sSDx50LrQs-DptMAOBfhDAYXEMbb2VuszaV3_naaL4ZruDD-n6vNRwTHtMMfOsv_HCwzUD2mu51R-kg92v_hugdp-g6ve0mDdlcLVxtx28t3-ne_4R-cAnPpB7T-6wq0ydajwUpkjs1DKMlnMUZ4JFxDr57Ex7f1qljdH7fNFYPBfVRToucsEQ98UWDB0imNKcB8tQyoRNSZTJAAV8qlFRSvNY8Rp4sKtpH1SzZ_RTIm5CsVO6M8Hch8hZSEnkL9IU8zcVDzcAjzTWx5di63ke1cnVzaNuWrmzLHuk2dpZ99L1qoA01C7vYNCzDdR2sGcsfAVg0oQ)
 
-*** note
 ### Note:
 * Each [key_code](https://w3c.github.io/uievents/#keys-codevalues) has its own state machine. That means, when there are multiple keyboard interactions happening at the same time. You should expect multiple state machines running at the same time, and each `key_code` allows to a identify the physical key associated with the keyboard event.
 ***
 
-*** promo
-## Terminologies:
-* **Flush the map**:
-
-  We flush all the entries in `pointer_id_entry_map_` that are waiting for `click`(at [state[3]](#waiting-click)) to finish up current interaction. We do so since either we have waited long enough(1 sec) or we know we won't be able to see any from now on(this is the case when `last_pointer_id_` has been overwritten by a new `pointerdown` event).
-
-  What it actually does is, for all entries in `pointer_id_entry_map_`:
-    * If it's an `pointerup` entry, record tap or click UKM. Then erase from the map.
-    * If it's an `pointerdown` entry with timestamp length > 1(i.e. We've seen both `pointerdown` & `pointerup` in its interaction), dispatch `pointerdown` for event timing and record tap or click UKM. Then erase from the map.
-    * Others, that is a `pointerdown` entry with timestamp length == 1(i.e. We've only seen `pointerdown` in its interaction), keep it in the map and do nothing, as it's still waiting for more events(either `pointerup` or `click` or both) to show up to finish their interactions.
-
-* **Flush timer**:
-
-  `pointer_flush_timer_` is a 1 second unique timer shared between all state machines. When it times out, it'll trigger a flush for `pointer_id_entry_map_`.
-***
-
-- - - -
 
 ## States
 
 ### `[1]` No entry
-The initial state. Either no entry of the pointer_id has been seen or previous ones have been cancelled.
-`pointer_id_entry_map_` does not contain any entry with key equal to pointer_id.
+The initial state. Either no entry of the key_code has been seen or previous ones have been cancelled.
+`key_code_entry_map_` does not contain any entry with key equal to key_code.
 
 ### `[2]` Have keydown entry
-An intermediate state. In this state, we have seen the `pointerdown` entry for the current interaction, and are waiting for more events(`pointerup` or `click` or both) from the same interaction to show up.
-`pointer_id_entry_map_` currently contains the `pointerdown` entry of the interaction that this state machine represent.
+An intermediate state. In this state, we have seen the `keydown` entry for the current interaction, and are waiting for the matching `pointerup` entry.
+`key_code_entry_map_` currently contains the `keydown` entry of the interaction that this state machine represent.
 
 ### `[3]` Waiting keyup
-An intermediate state. In this state, we have seen either the `pointerdown` entry, or `pointerup` entry, or both for the current interaction, and are solely waiting for `click` to finish current interaction, which may or may not show up.
+An intermediate state. In this state, we have seen the `keydown` entry waiting for a **matching** `keyup` entry to finish current interaction, which may or may not show up.
 
 ### `[4]` Interaction finished
-This is the end of an interaction lifecycle.
+This is the end of an interaction lifecycle. The `keydown` entry was paired with the corresponding `keyup` entry and the key_code from the `key_code_entry_map_` was errased.
+
 
 - - - -
 
 ## Transitions
 
 ### `[5]` keydown
-*** aside
-Flush pointer map and stop any ongoing flush timer from any state machines.
 
-Save the `pointerdown` entry to the map and update `last_pointer_id_` with current `pointerdown` entry's pointer_id for potential future click entry.
-***
+Save the `keydown` entry to the key_code_entry_map_ and update `last_pointer_id_` with current `pointerdown` entry's pointer_id for potential future click entry.
+
 
 ### `[6]` keycancel
-This can happen when dragging an element on the page. Since dragging is a continuous interaction which will be covered separately by smoothness metrics, the `pointerdown`'s interactionId & the `pointercancel`'s will remain 0.
-*** aside
-Dispatch the `pointerdown` entry saved in `pointer_id_entry_map_` for event timing and erase it from the map.
-
-Clear `last_pointer_id_`.
-***
+If the key event occurs as part of a composition session, i.e., after a compositionstart event and before the corresponding compositionend event the key event is cancelled. For the `keyup` event specifically it can be cancelled if `key_code_entry_map_` is empty i.e. there are no pending `keydown` events.
 
 ### `[7]` keyup
-*** aside
-Generate a new interaction id and assign it to both current `pointerup` entry and the saved `pointerdown` entry in map.
 
-Dispatch the `pointerdown` entry saved in `pointer_id_entry_map_` for event timing.
+Set code be event’s key_code attribute value.
 
-Add `pointerup`'s timestamp to the saved `pointerdown` entry in map.
+### `[8]` keyup key_code = keydown key_code
 
-Start 1 sec flush timer if it's currently not active.
+Generate a new interaction id for the keydown-keyup pair (`keydown` and `keyup`). Delete the key_code of the pair from the `key_code_entry_map_`.
 
-Update `last_pointer_id_` with current `pointerup` entry's pointer_id for potential future `click` entry.
-***
+### `[9?]` MaybeFlushKeyboardEntries
 
-### `[8]` pointerup
-*** aside
-Generate a new interaction id and assign it to current `pointerup` entry.
-
-Save current `pointerup` entry to `pointer_id_entry_map_` in case a click event show up in future.
-
-Start 1 sec flush timer if it's currently not active.
-
-Update `last_pointer_id_` with current `pointerup` entry's pointer_id for potential future click entry.
-***
-
-### `[9]` pointercancel
-*** aside
-Dispatch the entry saved in `pointer_id_entry_map_` for event timing if it's `pointerdown`; no need to dispatch if it's `pointerup`.
-
-Erase it from the map and clear `last_pointer_id_`.
-***
-
-### `[10]` click
-In this case we've only seen `pointerdown` and `click`. This could happen for instances like contextmenu.
-*** aside
-Generate a new interaction id and assign it to both current `click` entry and the saved `pointerdown` entry in map.
-
-Add `click`'s timestamp to the saved `pointerdown` entry and record click UKM.
-
-Erase `pointerdown` entry from the map and clear `last_pointer_id_`.
-***
-
-### `[11]` click/flush
-This transition can be triggered in two different scenarios:
-* by a click event: In this case, we received a click event, and by treating `last_pointer_id_` as its pointer_id, we've found a matching entry in the map -- either a `pointerdown` entry with timestamp length > 1(i.e. we've seen both `pointerdown` & `pointerup`), or a `pointerup` entry in the map(i.e. we've only seen the `pointerup` entry).
-
-  In this case, we do:
-  *** aside
-  Assign map entry(either a `pointerdown` or `pointerup`)'s interactionId to the current `click` entry.
-
-  Add `click`'s timestamp to the map entry's timestamps and record click UKM.
-
-  Erase the map entry from the map and clear `last_pointer_id_`.
-  ***
-
-* by a map flush that's triggered by:
-  * the flush timer times out and the timer was initiated by the `pointerup` event of current interaction.
-  * the flush timer times out and the timer was initiated by a `pointerup` event from other interactions.
-  * a `pointerdown` event from other interactions.
-
-  In this case, we do:
-  *** aside
-  Dispatch the saved `pointerdown` entry in map for event timing if it's an `pointerdown` entry with timestamp length > 1(i.e. We've seen both `pointerdown` & `pointerup` in this interaction).
-
-  Record tap or click UKM.
-
-  Erase the entry from the map.
-  ***
-
-### `[12]` click
-In this case, there is no previous pointerdown or pointerup entry. This can happen when the user clicks using a non-pointer device.
-*** aside
-Generate a new interactionId. No need to add to the map since this is the last event in the interaction.
-
-Record click UKM and clear `last_pointer_id_`.
-***
+_I have not figured this out one yet_
 
 - - - -
 
@@ -166,6 +84,22 @@ Note: When you update the state diagram, please keep the source file below up to
 date as well.
 
 ```
+stateDiagram-v2
 
+no_entry : No entry [1]
+have_key_down : Have keydown entry [2]
+have_key_up : Waiting keyup [3]
+interaction_finished: Interaction finished [4]
+
+   [*] --> no_entry
+   no_entry --> have_key_down : keydown [5]
+   have_key_down --> no_entry : keycancel [6]
+   have_key_down --> have_key_up : keyup [7]
+   %no_entry --> have_key_up : keyup [7]
+   have_key_up --> no_entry : keycancel [6]
+   %have_key_down --> interaction_finished : keyup key_code = keydown key_code[8]
+   have_key_up --> interaction_finished : keyup key_code = keydown key_code[8] / MaybeFlushKeyboardEntries (cl 403) [9?]
+   no_entry --> interaction_finished : keyup key_code = keydown key_code[8]
+   interaction_finished --> [*]
 
 ```
