@@ -1,7 +1,5 @@
 # Event Timing - Keyboard Interaction State Machine
 
-[TOC]
-
 ## Background
 A keyboard interaction is a group of event handlers that fire during the same logical input key. For example, A single "key press" interaction on a keyboard should include set order of events, such as `keydown`, `beforeinput/input`, and `keyup`. [EventTiming](https://w3c.github.io/event-timing/) group up certain events as interactions by assigning the same & non-trivial [interactionId](https://www.w3.org/TR/2022/WD-event-timing-20220524/#dom-performanceeventtiming-interactionid) following a state machine logic located in [`responsiveness_metrics.cc -> ResponsivenessMetrics::SetKeyIdAndRecordLatency()`](https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/renderer/core/timing/responsiveness_metrics.cc#327). This doc visualizes this state machine to help people understand its logic.
 
@@ -52,7 +50,7 @@ This is the end of an interaction lifecycle. The `keydown` entry was paired with
 
 ### `[5]` keydown
 
-Save the `keydown` entry to the key_code_entry_map_.
+Save the `keydown` key_code value to the key_code_entry_map_.
 
 ### `[6]` keycancel
 If the key event occurs as part of a composition session, i.e., after a compositionstart event and before the corresponding compositionend event the key event is cancelled. For the `keyup` event specifically it can be cancelled if `key_code_entry_map_` is empty i.e. there are no pending `keydown` events.
