@@ -1,7 +1,7 @@
 # Event Timing - Keyboard Interaction State Machine
 
 ## Background
-A keyboard interaction is a group of event handlers that fire during the same logical input key. For example, A single "key press" interaction on a keyboard should include set order of events, such as `keydown`, `beforeinput/input`, and `keyup`. [EventTiming](https://w3c.github.io/event-timing/) group up certain events as interactions by assigning the same & non-trivial [interactionId](https://www.w3.org/TR/2022/WD-event-timing-20220524/#dom-performanceeventtiming-interactionid) following a state machine logic located in [`responsiveness_metrics.cc -> ResponsivenessMetrics::SetKeyIdAndRecordLatency()`](https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/renderer/core/timing/responsiveness_metrics.cc#327). This doc visualizes this state machine to help people understand its logic.
+A keyboard interaction is a group of event handlers that fire when pressing a key on a keyboard. For example, A single "key pressed" interaction should include set order of events, such as `keydown`, `beforeinput/input`, and `keyup`. [EventTiming](https://w3c.github.io/event-timing/) group up certain events as interactions by assigning the same & non-trivial [interactionId](https://www.w3.org/TR/2022/WD-event-timing-20220524/#dom-performanceeventtiming-interactionid) following a state machine logic located in [`responsiveness_metrics.cc -> ResponsivenessMetrics::SetKeyIdAndRecordLatency()`](https://chromium.googlesource.com/chromium/src/+/main/third_party/blink/renderer/core/timing/responsiveness_metrics.cc#327). This doc visualizes this state machine to help people understand its logic.
 
 ## Key press Mechanics
 
