@@ -36,7 +36,7 @@ The initial state. Either no entry of the key_code has been seen or previous one
 `key_code_entry_map_` does not contain any entry with key equal to key_code.
 
 ### `[2]` Have keydown entry
-An intermediate state. In this state, we have seen the `keydown` entry for the current interaction, and are waiting for the matching `pointerup` entry.
+An intermediate state. In this state, we have seen the `keydown` entry for the current interaction, and are waiting for the matching `keyup` entry.
 `key_code_entry_map_` currently contains the `keydown` entry of the interaction that this state machine represent.
 
 ### `[3]` Waiting keyup
@@ -52,15 +52,14 @@ This is the end of an interaction lifecycle. The `keydown` entry was paired with
 
 ### `[5]` keydown
 
-Save the `keydown` entry to the key_code_entry_map_ and update `last_pointer_id_` with current `pointerdown` entry's pointer_id for potential future click entry.
-
+Save the `keydown` entry to the key_code_entry_map_.
 
 ### `[6]` keycancel
 If the key event occurs as part of a composition session, i.e., after a compositionstart event and before the corresponding compositionend event the key event is cancelled. For the `keyup` event specifically it can be cancelled if `key_code_entry_map_` is empty i.e. there are no pending `keydown` events.
 
 ### `[7]` keyup
 
-Set code be event’s key_code attribute value.
+Set current key_code be event’s key_code attribute value.
 
 ### `[8]` keyup key_code = keydown key_code
 
