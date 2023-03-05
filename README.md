@@ -25,7 +25,7 @@ The nature of key press mechanism brings a fundamental theory of the keyboard in
 
 
 ## Diagram of a Keyboard Interaction
-[![](https://mermaid.ink/img/pako:eNqlk11PgzAUhv_KSZMlarY5oHwm6o0ajdEbL0wEQjroRiO0C5QpLvvvlm3sw2G82F3f9zycvqctCxSLhCIPlZJIesvItCD5YK4HPOBcRJTLogYPXgSsl74WBjwlcxp90DpKxCdX1QelQemV3HD6PlfNFPVGmGR82oBK-4YCGJe0ILFkgkcTxlmZ0sSDx50LrQs-DptMAOBfhDAYXEMbb2VuszaV3_naaL4ZruDD-n6vNRwTHtMMfOsv_HCwzUD2mu51R-kg92v_hugdp-g6ve0mDdlcLVxtx28t3-ne_4R-cAnPpB7T-6wq0ydajwUpkjs1DKMlnMUZ4JFxDr57Ex7f1qljdH7fNFYPBfVRToucsEQ98UWDB0imNKcB8tQyoRNSZTJAAV8qlFRSvNY8Rp4sKtpH1SzZ_RTIm5CsVO6M8Hch8hZSEnkL9IU8zcVDzcAjzTWx5di63ke1cnVzaNuWrmzLHuk2dpZ99L1qoA01C7vYNCzDdR2sGcsfAVg0oQ?type=png)](https://mermaid.live/edit#pako:eNqlk11PgzAUhv_KSZMlarY5oHwm6o0ajdEbL0wEQjroRiO0C5QpLvvvlm3sw2G82F3f9zycvqctCxSLhCIPlZJIesvItCD5YK4HPOBcRJTLogYPXgSsl74WBjwlcxp90DpKxCdX1QelQemV3HD6PlfNFPVGmGR82oBK-4YCGJe0ILFkgkcTxlmZ0sSDx50LrQs-DptMAOBfhDAYXEMbb2VuszaV3_naaL4ZruDD-n6vNRwTHtMMfOsv_HCwzUD2mu51R-kg92v_hugdp-g6ve0mDdlcLVxtx28t3-ne_4R-cAnPpB7T-6wq0ydajwUpkjs1DKMlnMUZ4JFxDr57Ex7f1qljdH7fNFYPBfVRToucsEQ98UWDB0imNKcB8tQyoRNSZTJAAV8qlFRSvNY8Rp4sKtpH1SzZ_RTIm5CsVO6M8Hch8hZSEnkL9IU8zcVDzcAjzTWx5di63ke1cnVzaNuWrmzLHuk2dpZ99L1qoA01C7vYNCzDdR2sGcsfAVg0oQ)
+[![](https://mermaid.ink/img/pako:eNqVkstO6zAQhl9lNEuUVnFITGIJNlzE0RFs2OFEkWlcatHYVeIUQtV3xw6EBg5nwc4z8_nXP5cdLkwlkWFrhZUXSjw2op5to1znWptSatv0wODWwPuTkyLXK7GV5ZPsy8o8a1e9djG4eAg_uGjkFqbemFZZZTx6fogutw7lx45T2spGLHyyXCqt2pWsGPw5ZGHMAo8Lbw0A-FEBs9kZjC6H5KdlX_luc3TIk2KAv9Y_f0wMM-Cq_bCsH-EUbNPJAiaEG1tjgdOJ4rThqUH4R20p1u1XOaldiyf_s_fTnLyqg7qNb6_0y3TCY6djqoB3hKe_lL4R_YO8Wnft6q_sH4xoqkvXipItz8Y9_PjTS7oFYYC1bGqhKndhO4_naFeyljky96zkUnRrm2Ou9w4VnTV3vV4g82MOsNtUh5tENkwrwI3Q98bUI-RCZDt8QRadzOPjiIZhlqYRySiJAuyRkZDOk4xkEUlSGsZZluwDfB0UwjlNSRTGCc1onBCS0v0bxdoOKA?type=png)](https://mermaid.live/edit#pako:eNqVkstO6zAQhl9lNEuUVnFITGIJNlzE0RFs2OFEkWlcatHYVeIUQtV3xw6EBg5nwc4z8_nXP5cdLkwlkWFrhZUXSjw2op5to1znWptSatv0wODWwPuTkyLXK7GV5ZPsy8o8a1e9djG4eAg_uGjkFqbemFZZZTx6fogutw7lx45T2spGLHyyXCqt2pWsGPw5ZGHMAo8Lbw0A-FEBs9kZjC6H5KdlX_luc3TIk2KAv9Y_f0wMM-Cq_bCsH-EUbNPJAiaEG1tjgdOJ4rThqUH4R20p1u1XOaldiyf_s_fTnLyqg7qNb6_0y3TCY6djqoB3hKe_lL4R_YO8Wnft6q_sH4xoqkvXipItz8Y9_PjTS7oFYYC1bGqhKndhO4_naFeyljky96zkUnRrm2Ou9w4VnTV3vV4g82MOsNtUh5tENkwrwI3Q98bUI-RCZDt8QRadzOPjiIZhlqYRySiJAuyRkZDOk4xkEUlSGsZZluwDfB0UwjlNSRTGCc1onBCS0v0bxdoOKA)
 
 ### Note:
 * Each [key_code](https://w3c.github.io/uievents/#keys-codevalues) has its own state machine. That means, when there are multiple keyboard interactions happening at the same time. You should expect multiple state machines running at the same time, and each `key_code` allows to a identify the physical key associated with the keyboard event.
@@ -40,10 +40,10 @@ The initial state. Either no entry of the key_code has been seen or previous one
 
 ### `[2]` Have keydown entry
 An intermediate state. In this state, we have seen the `keydown` entry for the current interaction, and are waiting for the matching `keyup` entry.
-`key_code_entry_map_` currently contains the `keydown` entry of the interaction that this state machine represent.
+`key_code_entry_map_` currently contains the `keydown` entry of the interaction that this state machine represent. In this state, `keydown` entry waiting for a **matching** `keyup` entry to finish current interaction, which may or may not show up.
 
-### `[3]` Waiting keyup
-An intermediate state. In this state, we have seen the `keydown` entry waiting for a **matching** `keyup` entry to finish current interaction, which may or may not show up.
+### `[3]` Composition Event
+The state indicates that keydown has initiated the composition. Since the composition events are not part of the keyboard interactions this intermediate state holds until the composition is over.
 
 ### `[4]` Interaction finished
 This is the end of an interaction lifecycle. The `keydown` entry was paired with the corresponding `keyup` entry and the key_code from the `key_code_entry_map_` was errased.
@@ -57,20 +57,22 @@ This is the end of an interaction lifecycle. The `keydown` entry was paired with
 
 Save the `keydown` key_code value to the key_code_entry_map_.
 
-### `[6]` keycancel
-If the key event occurs as part of a composition session, i.e., after a compositionstart event and before the corresponding compositionend event the key event is cancelled. For the `keyup` event specifically it can be cancelled if `key_code_entry_map_` is empty i.e. there are no pending `keydown` events.
+### `[6]` [isComposing = true] compositionstart
+The keydown event initiates the composition session. The `isComposition` parameter is set to true.
 
-### `[7]` keyup
+### `[7]` [isComposing = true] compositionend
+The keydown ends the composition session [Go to Composition Events Mecanics]. The `isComposition` parameter is set to false.
 
-Set current key_code be event’s key_code attribute value.
+### `[8]` [keyup key_code = keydown key_code] keyup
 
-### `[8]` keyup key_code = keydown key_code
+The transition occurs if the keyup event is fired and there is a matching key_code of a keydown event. In this transition the following steps are executed:
+1.Set current key_code be event’s key_code attribute value. 
+2.Generate a new interaction id for the keydown-keyup pair (`keydown` and `keyup`). 
+3.Delete the key_code of the pair from the `key_code_entry_map_`.
 
-Generate a new interaction id for the keydown-keyup pair (`keydown` and `keyup`). Delete the key_code of the pair from the `key_code_entry_map_`.
+### `[9]` MaybeFlushKeyboardEntries
+https://bugs.chromium.org/p/chromium/issues/detail?id=1420716
 
-### `[9?]` MaybeFlushKeyboardEntries
-
-_I have not figured this out one yet_
 
 - - - -
 
