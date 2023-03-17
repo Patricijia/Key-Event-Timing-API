@@ -21,11 +21,11 @@ The nature of key press mechanism brings a fundamental theory of the keyboard in
 
 | <div style="width:15cm">Composition Events Diagram </div> | Explanation |
 | ---------------------------------------------------- | ------------- |
-|<img src="https://mermaid.ink/img/pako:eNqVVMFu2zAM_RVCx8EJHNlNYgHbYekORbHtUOyyqig0m2mM2ZIhy9myIP8-OVZixXELFL7QfI9P1COhPUlVhoSR2giDt7l40aKcbCmXXEr1jNLoHTD4pqALudyILT7_xl2m_kiL3LvoElj1iANSVVaqzk2upD1KG7bqEw9t4prXVJntySf-OGaumSgzBh7vi8wc6ReulcZcVo1h8Ln_cbAD7ryUvUFTde03lZ9b9cnTBwCPH55gMvkEJ7OOybNzLXJpmA0gr2GDRQadPZZ_QTnXDC0D9pjX7pbyBT7CWhQ1PkEuLcf6Al4B9LpXMucDPHPs3QbiRjdWO90ILVKDGraiaBA0pphvMeNe477MWPONm9pIQx3UV7l5wO33r61LHXxx2OCYbjKvNO-81ligqFsZz-p2nsPprNhbMpXGeqjS7fqYoe_283XV4aKPbsGovZY-sIpdm8L9Zem2v62xi00CUqIuRZ7ZB2LfkjgxGyyRE2bDDNeiKQwnXB4sVTRGPexkSlh71YB0w3NPCmHHNgNSCflTqfJEsr-E7clfwqL5bBouk2RJ6SKe03kYB2RH2CycTZMbSm_iZJ4kNJzRQ0D-HRXC6SJOFlFEaRgl0TKKl4f_PDW1wA?type=png)](https://mermaid.live/edit#pako:eNqVVMFu2zAM_RVCx8EJHNlNYgHbYekORbHtUOyyqig0m2mM2ZIhy9myIP8-OVZixXELFL7QfI9P1COhPUlVhoSR2giDt7l40aKcbCmXXEr1jNLoHTD4pqALudyILT7_xl2m_kiL3LvoElj1iANSVVaqzk2upD1KG7bqEw9t4prXVJntySf-OGaumSgzBh7vi8wc6ReulcZcVo1h8Ln_cbAD7ryUvUFTde03lZ9b9cnTBwCPH55gMvkEJ7OOybNzLXJpmA0gr2GDRQadPZZ_QTnXDC0D9pjX7pbyBT7CWhQ1PkEuLcf6Al4B9LpXMucDPHPs3QbiRjdWO90ILVKDGraiaBA0pphvMeNe477MWPONm9pIQx3UV7l5wO33r61LHXxx2OCYbjKvNO-81ligqFsZz-p2nsPprNhbMpXGeqjS7fqYoe_283XV4aKPbsGovZY-sIpdm8L9Zem2v62xi00CUqIuRZ7ZB2LfkjgxGyyRE2bDDNeiKQwnXB4sVTRGPexkSlh71YB0w3NPCmHHNgNSCflTqfJEsr-E7clfwqL5bBouk2RJ6SKe03kYB2RH2CycTZMbSm_iZJ4kNJzRQ0D-HRXC6SJOFlFEaRgl0TKKl4f_PDW1wA" width="1000" >  | There are two types of each key event. It can be either composed or not composed which is inditifed by the `isComposed` parameter. The composition events occur when browser needs to combine multiple keystrokes or other inputs into a single text composition. For example, if a user is typing a word with an accent or special character, the browser may need to combine several keystrokes to produce the correct character e.g %, ß, Ǣ, ☺, ⓶. Although the structure of the composition events is similar to the simple key press mechanics, the keyboard interaction omits all the composed events. In this case if the event's parameter  `isComposed` is set to `true` the event will **not** be included in the interaction.|
+|<img src="https://mermaid.ink/img/pako:eNqVVMFu2zAM_RVCx8EJHNlNYgHbYekORbHtUOyyqig0m2mM2ZIhy9myIP8-OVZixXELFL7QfI9P1COhPUlVhoSR2giDt7l40aKcbCmXXEr1jNLoHTD4pqALudyILT7_xl2m_kiL3LvoElj1iANSVVaqzk2upD1KG7bqEw9t4prXVJntySf-OGaumSgzBh7vi8wc6ReulcZcVo1h8Ln_cbAD7ryUvUFTde03lZ9b9cnTBwCPH55gMvkEJ7OOybNzLXJpmA0gr2GDRQadPZZ_QTnXDC0D9pjX7pbyBT7CWhQ1PkEuLcf6Al4B9LpXMucDPHPs3QbiRjdWO90ILVKDGraiaBA0pphvMeNe477MWPONm9pIQx3UV7l5wO33r61LHXxx2OCYbjKvNO-81ligqFsZz-p2nsPprNhbMpXGeqjS7fqYoe_283XV4aKPbsGovZY-sIpdm8L9Zem2v62xi00CUqIuRZ7ZB2LfkjgxGyyRE2bDDNeiKQwnXB4sVTRGPexkSlh71YB0w3NPCmHHNgNSCflTqfJEsr-E7clfwqL5bBouk2RJ6SKe03kYB2RH2CycTZMbSm_iZJ4kNJzRQ0D-HRXC6SJOFlFEaRgl0TKKl4f_PDW1wA?type=png)](https://mermaid.live/edit#pako:eNqVVMFu2zAM_RVCx8EJHNlNYgHbYekORbHtUOyyqig0m2mM2ZIhy9myIP8-OVZixXELFL7QfI9P1COhPUlVhoSR2giDt7l40aKcbCmXXEr1jNLoHTD4pqALudyILT7_xl2m_kiL3LvoElj1iANSVVaqzk2upD1KG7bqEw9t4prXVJntySf-OGaumSgzBh7vi8wc6ReulcZcVo1h8Ln_cbAD7ryUvUFTde03lZ9b9cnTBwCPH55gMvkEJ7OOybNzLXJpmA0gr2GDRQadPZZ_QTnXDC0D9pjX7pbyBT7CWhQ1PkEuLcf6Al4B9LpXMucDPHPs3QbiRjdWO90ILVKDGraiaBA0pphvMeNe477MWPONm9pIQx3UV7l5wO33r61LHXxx2OCYbjKvNO-81ligqFsZz-p2nsPprNhbMpXGeqjS7fqYoe_283XV4aKPbsGovZY-sIpdm8L9Zem2v62xi00CUqIuRZ7ZB2LfkjgxGyyRE2bDDNeiKQwnXB4sVTRGPexkSlh71YB0w3NPCmHHNgNSCflTqfJEsr-E7clfwqL5bBouk2RJ6SKe03kYB2RH2CycTZMbSm_iZJ4kNJzRQ0D-HRXC6SJOFlFEaRgl0TKKl4f_PDW1wA" width="1000" >  | ⚠ Note: This diagram shows the relation between key events and composition events. It does *not* reflect the composition events alone based on the documentation: https://w3c.github.io/uievents/#events-composition-key-events. <br /> <br /> There are two types of each key event. It can be either composed or not composed which is inditifed by the `isComposed` parameter. The composition events occur when browser needs to combine multiple keystrokes or other inputs into a single text composition. For example, if a user is typing a word with an accent or special character, the browser may need to combine several keystrokes to produce the correct character e.g %, ß, Ǣ, ☺, ⓶. Although the structure of the composition events is similar to the simple key press mechanics, the keyboard interaction omits all the composed events. In this case if the event's parameter `isComposed` is set to `true` the event will **not** be included in the interaction.|
 
 
 ## Diagram of a Keyboard Interaction
-[![](https://mermaid.ink/img/pako:eNqVkstO6zAQhl9lNEuUVnFITGIJNlzE0RFs2OFEkWlcatHYVeIUQtV3xw6EBg5nwc4z8_nXP5cdLkwlkWFrhZUXSjw2op5to1znWptSatv0wODWwPuTkyLXK7GV5ZPsy8o8a1e9djG4eAg_uGjkFqbemFZZZTx6fogutw7lx45T2spGLHyyXCqt2pWsGPw5ZGHMAo8Lbw0A-FEBs9kZjC6H5KdlX_luc3TIk2KAv9Y_f0wMM-Cq_bCsH-EUbNPJAiaEG1tjgdOJ4rThqUH4R20p1u1XOaldiyf_s_fTnLyqg7qNb6_0y3TCY6djqoB3hKe_lL4R_YO8Wnft6q_sH4xoqkvXipItz8Y9_PjTS7oFYYC1bGqhKndhO4_naFeyljky96zkUnRrm2Ou9w4VnTV3vV4g82MOsNtUh5tENkwrwI3Q98bUI-RCZDt8QRadzOPjiIZhlqYRySiJAuyRkZDOk4xkEUlSGsZZluwDfB0UwjlNSRTGCc1onBCS0v0bxdoOKA?type=png)](https://mermaid.live/edit#pako:eNqVkstO6zAQhl9lNEuUVnFITGIJNlzE0RFs2OFEkWlcatHYVeIUQtV3xw6EBg5nwc4z8_nXP5cdLkwlkWFrhZUXSjw2op5to1znWptSatv0wODWwPuTkyLXK7GV5ZPsy8o8a1e9djG4eAg_uGjkFqbemFZZZTx6fogutw7lx45T2spGLHyyXCqt2pWsGPw5ZGHMAo8Lbw0A-FEBs9kZjC6H5KdlX_luc3TIk2KAv9Y_f0wMM-Cq_bCsH-EUbNPJAiaEG1tjgdOJ4rThqUH4R20p1u1XOaldiyf_s_fTnLyqg7qNb6_0y3TCY6djqoB3hKe_lL4R_YO8Wnft6q_sH4xoqkvXipItz8Y9_PjTS7oFYYC1bGqhKndhO4_naFeyljky96zkUnRrm2Ou9w4VnTV3vV4g82MOsNtUh5tENkwrwI3Q98bUI-RCZDt8QRadzOPjiIZhlqYRySiJAuyRkZDOk4xkEUlSGsZZluwDfB0UwjlNSRTGCc1onBCS0v0bxdoOKA)
+[![](https://mermaid.ink/img/pako:eNqVkl9PgzAUxb9Kcx_NtkAHDJroi85ojL74ZiGkG51rHC2BMsVl393bTbbFf4lvPae_U04v3cDcFBIYNFZYeaXEcy3K4ZqmOtXa5FLbuiOMPBiyX3I_S_VSrGX-Iru8MK8ad29QE9Q7-cnRnpubsjKNsso49PJETdfI8jGCSltZi7lz84XSqlnKgpHbo0t6l_Agc90IIfwsI8PhBelr7sxDZ7fztWdfkYfZL_BJWUZOBE6ntoRH-9y3e7n8T3fAbypdtZicnCQPjf6IcYTayjXO3Q8i54fyvZWRPcLjfx59L7qZvF61zfJOdjMj6mKKQ1Cy4Uk_2h-T7kicOQyglHUpVIGvZuPwFOxSljIFhstCLkS7simkeouoaK157PQcmK1bOYC2Ko7vDNhCrBp0K6GfjCl7CCWwDbwBo5NRMKaR5yVxTP0k8ukAOmC-F43CxE-oH8aRFyRJuB3A--4EbxTFPvWCMJwEPobGdPsBtvD90w?type=png)](https://mermaid.live/edit#pako:eNqVkl9PgzAUxb9Kcx_NtkAHDJroi85ojL74ZiGkG51rHC2BMsVl393bTbbFf4lvPae_U04v3cDcFBIYNFZYeaXEcy3K4ZqmOtXa5FLbuiOMPBiyX3I_S_VSrGX-Iru8MK8ad29QE9Q7-cnRnpubsjKNsso49PJETdfI8jGCSltZi7lz84XSqlnKgpHbo0t6l_Agc90IIfwsI8PhBelr7sxDZ7fztWdfkYfZL_BJWUZOBE6ntoRH-9y3e7n8T3fAbypdtZicnCQPjf6IcYTayjXO3Q8i54fyvZWRPcLjfx59L7qZvF61zfJOdjMj6mKKQ1Cy4Uk_2h-T7kicOQyglHUpVIGvZuPwFOxSljIFhstCLkS7simkeouoaK157PQcmK1bOYC2Ko7vDNhCrBp0K6GfjCl7CCWwDbwBo5NRMKaR5yVxTP0k8ukAOmC-F43CxE-oH8aRFyRJuB3A--4EbxTFPvWCMJwEPobGdPsBtvD90w)
 
 ### Note:
 * Each [key_code](https://w3c.github.io/uievents/#keys-codevalues) has its own state machine. That means, when there are multiple keyboard interactions happening at the same time. You should expect multiple state machines running at the same time, and each `key_code` allows to a identify the physical key associated with the keyboard event.
@@ -43,7 +43,7 @@ An intermediate state. In this state, we have seen the `keydown` entry for the c
 `key_code_entry_map_` currently contains the `keydown` entry of the interaction that this state machine represent. In this state, `keydown` entry waiting for a **matching** `keyup` entry to finish current interaction, which may or may not show up.
 
 ### `[3]` Composition Event
-The state indicates that keydown has initiated the composition. Since the composition events are not part of the keyboard interactions this intermediate state holds until the composition is over.
+The state indicates that keydown has initiated the composition. Since the composition events are not part of the keyboard interactions this intermediate state holds until the interactionId is produced.
 
 ### `[4]` Interaction finished
 This is the end of an interaction lifecycle. The `keydown` entry was paired with the corresponding `keyup` entry and the key_code from the `key_code_entry_map_` was errased.
@@ -60,8 +60,8 @@ Save the `keydown` key_code value to the key_code_entry_map_.
 ### `[6]` [isComposing = true] compositionstart
 The keydown event initiates the composition session. The `isComposition` parameter is set to true.
 
-### `[7]` [isComposing = true] compositionend
-The keydown ends the composition session [Go to Composition Events Mecanics]. The `isComposition` parameter is set to false.
+### `[7]` input
+The input event within the composition ends the composition session [Go to Composition Events Mecanics] and produces the interactionId.
 
 ### `[8]` [keyup key_code = keydown key_code] keyup
 
@@ -92,18 +92,16 @@ stateDiagram-v2
 
 no_entry : No entry [1]
 have_key_down : Have keydown entry [2]
-have_key_up : Waiting keyup [3]
+have_composition : Composition Event[3]
 interaction_finished: Interaction finished [4]
 
    [*] --> no_entry
    no_entry --> have_key_down : keydown [5]
-   have_key_down --> no_entry : keycancel [6]
-   have_key_down --> have_key_up : keyup [7]
-   %no_entry --> have_key_up : keyup [7]
-   have_key_up --> no_entry : keycancel [6]
-   %have_key_down --> interaction_finished : keyup key_code = keydown key_code[8]
-   have_key_up --> interaction_finished : keyup key_code = keydown key_code[8] / MaybeFlushKeyboardEntries (cl 403) [9?]
-   no_entry --> interaction_finished : keyup key_code = keydown key_code[8]
+   no_entry --> have_composition: compositionstart [6]
+   have_composition --> interaction_finished : input [7]
+   have_key_down --> interaction_finished : [keyup key_code = keydown key_code] keyup [8]
+   have_key_down --> interaction_finished : MaybeFlushKeyboardEntries[9]
+
    interaction_finished --> [*]
 
 ```
